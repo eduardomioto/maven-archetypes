@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.mioto.maven</groupId>
+	<artifactId>maven-springboot-archetype</artifactId>
+	<version>1.0.0</version>
+
+	<!-- https://www.infoq.com/articles/microframeworks1-spring-boot mvn archetype:generate 
+		\ -DarchetypeGroupId=<archetype-groupId> \ -DarchetypeArtifactId=<archetype-artifactId> 
+		\ -DarchetypeVersion=<archetype-version> \ -DgroupId=<my.groupid> \ -DartifactId=<my-artifactId> 
+		\ -Dname=<project-name> \ -Durl=<project-url> -->
+
+	<properties>
+		<jdk.version>1.7</jdk.version>
+	</properties>
+
+	<build>
+		<finalName>s3sync</finalName>
+		<plugins>
+
+			<!-- download source code in Eclipse, best practice -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<!-- Set a compiler level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>
